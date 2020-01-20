@@ -14,6 +14,9 @@ import Firebase
 class secondViewController: UIViewController , UITableViewDelegate , UITableViewDataSource {
     
     
+     let db = Firestore.firestore()
+    
+    
     
     
     @IBOutlet weak var tableView: UITableView!
@@ -97,7 +100,7 @@ class secondViewController: UIViewController , UITableViewDelegate , UITableView
         let history = sumofTotalAmount.map({_ in String(0)})
         
        
-        let db = Firestore.firestore()
+       
 
 //        for i in 0..<sumofTotalAmount.count{
 //
@@ -109,22 +112,63 @@ class secondViewController: UIViewController , UITableViewDelegate , UITableView
             return
         }
         db.collection("burgerApp").document(userId).setData([
-            "userdata" : "userdata",
-            "userdata1" : "userdata1",
-            "userdataArray" : [
-                "newData" : 123,
-                "age" : 23
-                
-                
-            ],
+//            "userdata" : "userdata",
+//            "userdata1" : "userdata1",
+//            "userdataArray" : [
+//                "newData" : 123,
+//                "age" : 23
+//
+//
+//            ],
             
+            "userfood item":selectedItem ,
             
+            "food item price":sumofTotalAmount
             
             
         ])
         
          
     }
+    
+    
+    
+    
+    @IBAction func historyBtn(_ sender: Any) {
+        
+        guard let userId = Auth.auth().currentUser?.uid else {
+            return
+        }
+        
+        
+        let docRef = db.collection("burgerApp").document(userId)
+
+        docRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+                let price = document.get("food item price")!
+                
+                let item = document.get("userfood item")!
+                print("Document data: \(item)")
+                print(price)
+            } else {
+                print("Document does not exist")
+            }
+        }
+        
+        
+        
+
+        
+        
+        
+        
+        
+        
+        
+        
+    }
+    
+    
     
     
     
