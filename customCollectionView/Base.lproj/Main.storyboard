@@ -73,7 +73,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hle-eh-YYN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1000" y="100"/>
+            <point key="canvasLocation" x="557" y="146"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -83,6 +83,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Yt-XA-hPl">
+                                <rect key="frame" x="208" y="88" width="170" height="92"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dwb-1I-Bfp">
+                                        <rect key="frame" x="37" y="25" width="71" height="58"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="cart" image="cart"/>
+                                        <connections>
+                                            <action selector="cartButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hiy-Od-blN"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6GE-lP-P8q">
+                                        <rect key="frame" x="37" y="63" width="11" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YeY-S5-j6P">
+                                <rect key="frame" x="47" y="119" width="47" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="history">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="historyButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="h3q-g0-JjI"/>
+                                </connections>
+                            </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="C7D-8H-lkn">
                                 <rect key="frame" x="10" y="188" width="394" height="574"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -146,27 +178,6 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="P8h-NG-aNy"/>
                                 </connections>
                             </collectionView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Yt-XA-hPl">
-                                <rect key="frame" x="208" y="88" width="170" height="92"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dwb-1I-Bfp">
-                                        <rect key="frame" x="37" y="25" width="71" height="58"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="cart" image="cart"/>
-                                        <connections>
-                                            <action selector="cartButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hiy-Od-blN"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6GE-lP-P8q">
-                                        <rect key="frame" x="37" y="63" width="11" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -181,15 +192,23 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="bXm-rk-tmA"/>
+                    <navigationItem key="navigationItem" id="bXm-rk-tmA">
+                        <barButtonItem key="rightBarButtonItem" title="logout" id="gMq-bj-zxx">
+                            <connections>
+                                <action selector="logout:" destination="BYZ-38-t0r" id="K0S-IQ-bOB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="counterLbl" destination="6GE-lP-P8q" id="HZc-qS-EXb"/>
                         <segue destination="ntR-A5-qm9" kind="show" identifier="firstToSecond" id="6Ha-JT-JXW"/>
+                        <segue destination="Xec-FP-GEP" kind="show" identifier="logoutToSIgnup" id="7wM-uD-y3J"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1957.9710144927537" y="99.776785714285708"/>
+            <point key="canvasLocation" x="1493" y="135"/>
         </scene>
         <!--Second View Controller-->
         <scene sceneID="xp2-7S-LGa">
@@ -290,9 +309,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="N6e-4B-Yiy"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ve0-06-8Xi"/>
+                    <navigationItem key="navigationItem" id="ve0-06-8Xi">
+                        <barButtonItem key="rightBarButtonItem" title="logout" id="brC-QF-X8F">
+                            <connections>
+                                <action selector="logoutSecond:" destination="ntR-A5-qm9" id="Uzh-Qf-uc9"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="wQY-lJ-d5g" id="nuZ-tN-gAd"/>
+                        <segue destination="Xec-FP-GEP" kind="show" identifier="secToSignUp" id="jpv-vl-a1l"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xsm-Yi-9K1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -325,11 +351,14 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iIn-ZG-8Fc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="296" y="100"/>
+            <point key="canvasLocation" x="-197" y="135"/>
         </scene>
     </scenes>
     <resources>
         <image name="cart" width="64" height="64"/>
         <image name="hurricane" catalog="system" width="44" height="64"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="7wM-uD-y3J"/>
+    </inferredMetricsTieBreakers>
 </document>

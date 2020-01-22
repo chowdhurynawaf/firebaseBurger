@@ -147,17 +147,52 @@ class secondViewController: UIViewController , UITableViewDelegate , UITableView
             if let document = document, document.exists {
                 let price = document.get("food item price")!
                 
+                sumofTotalAmount = price as! [Int]
+                
+                
                 let item = document.get("userfood item")!
+                selectedItem = item as! [String]
+                
+                self.tableView.reloadData()
+                
                 print("Document data: \(item)")
                 print(price)
+                
+                
+                print("sumofTotalAmount : \(sumofTotalAmount)")
+                print("selected item : \(selectedItem)")
             } else {
                 print("Document does not exist")
             }
+            
+            
+            
+//            selectedItem = item
+//
+//
+//
+//
+//
+//             sumofTotalAmount = price
+//
+            
+            
+           
+            
+            
+            
+            
+            
         }
         
         
         
 
+        
+      
+        
+        
+        
         
         
         
@@ -173,7 +208,43 @@ class secondViewController: UIViewController , UITableViewDelegate , UITableView
     
     
     
+    
+    
+    
+    
+    
+    
+    @IBAction func logoutSecond(_ sender: UIBarButtonItem) {
+        
+        
+        do{
+            try
+                Auth.auth().signOut()
+                
+                
+                performSegue(withIdentifier: "secToSignUp", sender: self)
+                       
+            }
+            
+            
+            catch{
+            
+            print("error")
+            
+            
+            }
+        }
+        
+       
+        
+        
+    }
+    
+    
+    
+    
+    
 
     
 
-}
+

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 var counter = 0
 
@@ -123,9 +124,9 @@ class ViewController: UIViewController , UICollectionViewDelegate , UICollection
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as! secondViewController
-        
-        vc.labelNo = indexNO
+//        let vc = segue.destination as! secondViewController
+//        
+//        vc.labelNo = indexNO
     }
     
     
@@ -143,10 +144,51 @@ class ViewController: UIViewController , UICollectionViewDelegate , UICollection
         }
     
     
+    
+    
+    
+    
+    
+    
+    
+    @IBAction func historyButtonTapped(_ sender: UIButton) {
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
     }
     
+    
+    
 
+    
+    @IBAction func logout(_ sender: UIBarButtonItem) {
+        
+        
+        print("logeed out tapped")
+        
+            do{
+                try Auth.auth().signOut()
+                
+                performSegue(withIdentifier: "logoutToSIgnup", sender: nil)
+            }
+            
+            catch  {
+                print("you got an error")
+        }
+        
+        
+        
+    }
+    
+}
 
 
 
